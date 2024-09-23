@@ -3,7 +3,7 @@ import React from "react";
 const Image = ({ src, alt, variant, extraClass = "" }) => {
   const variantClasses = {
     backgroundImage: "w-full h-full object-cover",
-    pupLogo: "",
+    pupLogo: "h-32 w-32",
   };
 
   return (

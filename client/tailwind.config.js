@@ -7,6 +7,7 @@ export default {
   theme: {
     colors: {
       "pup-red": "#800000",
+      "pup-red-light": "#B36666",
       "pup-white": "#FFFFFF",
       "background" :"#D9D9D9"
     },
