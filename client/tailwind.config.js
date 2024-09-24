@@ -11,7 +11,11 @@ export default {
       "pup-white": "#FFFFFF",
       "background" :"#D9D9D9"
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'pup-img2': "url('./public/assets/img2.jpg')"
+      }
+    },
   },
   plugins: [],
 }

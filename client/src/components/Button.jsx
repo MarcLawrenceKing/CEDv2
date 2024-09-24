@@ -3,14 +3,16 @@ import React from "react";
 
 const Button = ({
   onClick,
-  text,
+  children,
   variant,
   type = "button",
   disabled = false,
 }) => {
   const variantClasses = {
     login:
-      "h-14 w-72 rounded-2xl bg-pup-red text-lg text-pup-white rounded-lg hover:bg-pup-red-light mt-5",
+      "h-14 w-72 rounded-2xl bg-pup-red text-lg text-pup-white rounded-2xl hover:bg-pup-red-light mt-5",
+    mainmenu:
+      "h-20 w-3/5 rounded-2xl bg-pup-red text-lg text-pup-white rounded-2xl hover:bg-pup-red-light m-10",
   };
   return (
     <button
@@ -19,7 +21,7 @@ const Button = ({
       type={type}
       disabled={disabled}
     >
-      {text}
+      {children}
     </button>
   );
 };

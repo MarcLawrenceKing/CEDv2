@@ -1,13 +1,25 @@
 import React from "react";
 
-const LogoText = ({ Icon, text, iconSize = "1px" }) => {
+const LogoText = ({ Icon, variant, text, iconSize = "35px" }) => {
+  const variantClassesIcon = {
+    header: "text-pup-white mr-2.5",
+    mainmenu: "text-pup-white mr-2.5",
+  };
+
+  const variantClassesText = {
+    header: "text-3xl text-pup-white",
+    mainmenu: "text-2xl text-pup-white",
+  };
+
   return (
-    <div className="flex items-center">
+    <div className="flex items-center justify-center">
       {/* Icon */}
-      <Icon size={iconSize} className={`text-pup-white mr-2.5`} />
+      {Icon && (
+        <Icon size={iconSize} className={`${variantClassesIcon[variant]}`} />
+      )}
 
       {/* Text */}
-      <span className={`text-3xl text-pup-white`}>{text}</span>
+      <span className={`${variantClassesText[variant]}`}>{text}</span>
     </div>
   );
 };

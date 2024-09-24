@@ -26,7 +26,9 @@ const LoginPage = () => {
         </span>
         <FillUp text="Username:" variant={"login"} />
         <FillUp text="Password:" variant={"login"} isPassword />
-        <Button onClick={handleClick} text={"Login"} variant={"login"} />
+        <Button onClick={handleClick} variant={"login"}>
+          Login
+        </Button>
       </div>
     </div>
   );
