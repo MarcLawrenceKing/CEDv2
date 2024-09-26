@@ -1,15 +1,20 @@
 import "./App.css";
-import Header from "./components/Header";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
-import LoginPage from "./components/LoginPage";
-import MainMenu from "./components/MainMenu";
+import LoginPage from "./pages/LoginPage";
+import MainMenuPage from "./pages/MainMenuPage";
+import NoPage from "./pages/NoPage";
 
 function App() {
   return (
     <>
-      <Header variant={"mainmenu"} isLogin={false} />
-      <MainMenu />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<LoginPage />} />
+          <Route path="/menu" element={<MainMenuPage />} />
+          <Route path="*" element={<NoPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

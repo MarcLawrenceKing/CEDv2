@@ -4,11 +4,15 @@ import Image from "./Image";
 import img2 from "../assets/img2.jpg";
 import pupLogo from "../assets/pup logo.png";
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
-const LoginPage = () => {
+const Login = () => {
+  const navigate = useNavigate();
+
   const handleClick = () => {
-    alert("Button clicked!");
+    navigate("/menu");
   };
+
   return (
     <div className="bg-background grid grid-cols-[65%_35%]">
       <div className="h-[calc(100vh-96px)]">
@@ -34,4 +38,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Login;

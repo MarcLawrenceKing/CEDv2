@@ -4,7 +4,7 @@ import React from "react";
 const Button = ({
   onClick,
   children,
-  variant,
+  variant = "",
   type = "button",
   disabled = false,
 }) => {
