@@ -1,37 +1,46 @@
 import React from "react";
 import LogoText from "./LogoText";
 import Image from "./Image";
-import { LuLock, LuDatabase, LuLogOut } from "react-icons/lu";
+import {
+  LuLock,
+  LuDatabase,
+  LuLogOut,
+  LuArrowLeft,
+  LuBookOpen,
+  LuCalendar,
+  LuAward,
+  LuDollarSign,
+  LuUsers,
+  LuFolder,
+} from "react-icons/lu";
 import pupLogo from "../assets/pup logo.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
-const Header = ({ variant, isLogin = false }) => {
+const Header = ({ variant, isLogin = false, isMainMenu = false }) => {
   const navigate = useNavigate();
 
   const goBack = () => {
     navigate(-1); //go back to previous route
   };
 
+  const location = useLocation();
+  const { tableName } = location.state || {};
+
   const variantClassesText = {
     login: "LOGIN",
     mainmenu: "CENTRALIZED ENROLLMENT DATABASE",
-    subjects: "",
-    schedule: "",
-    programs: "",
-    tuition: "",
-    students: "",
-    enrollment: "",
+    table: `${tableName}`,
   };
 
   const variantClassesLogo = {
     login: LuLock,
     mainmenu: LuDatabase,
-    subjects: null,
-    schedule: null,
-    programs: null,
-    tuition: null,
-    students: null,
-    enrollment: null,
+    SUBJECTS: LuBookOpen,
+    SCHEDULES: LuCalendar,
+    PROGRAMS: LuAward,
+    TUITIONS: LuDollarSign,
+    STUDENTS: LuUsers,
+    ENROLLMENTS: LuFolder,
   };
   return (
     <div
@@ -44,13 +53,19 @@ const Header = ({ variant, isLogin = false }) => {
       )}
       <LogoText
         variant={"header"}
-        Icon={variantClassesLogo[variant]}
+        Icon={variantClassesLogo[variant] || variantClassesLogo[tableName]}
         text={`${variantClassesText[variant]}`}
         iconSize="35px"
       />
-      {!isLogin && (
+      {!isLogin && isMainMenu && (
         <button onClick={goBack}>
           <LuLogOut size={"50px"} className="text-pup-white" />
+        </button>
+      )}
+
+      {!isLogin && !isMainMenu && (
+        <button onClick={goBack}>
+          <LuArrowLeft size={"50px"} className="text-pup-white" />
         </button>
       )}
     </div>

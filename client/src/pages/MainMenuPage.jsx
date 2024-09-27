@@ -5,7 +5,7 @@ import MainMenu from "../components/MainMenu";
 const MainMenuPage = () => {
   return (
     <>
-      <Header variant={"mainmenu"} />
+      <Header variant={"mainmenu"} isMainMenu={true} />
       <MainMenu />
     </>
   );

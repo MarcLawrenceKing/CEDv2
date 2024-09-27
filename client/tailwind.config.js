@@ -9,7 +9,10 @@ export default {
       "pup-red": "#800000",
       "pup-red-light": "#B36666",
       "pup-white": "#FFFFFF",
+      "pup-blue": "#17A2B8",
+      "pup-blue-light": "#45B5C6",
       "background" :"#D9D9D9"
+
     },
     extend: {
       backgroundImage: {

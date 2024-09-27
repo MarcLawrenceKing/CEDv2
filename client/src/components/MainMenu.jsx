@@ -2,6 +2,7 @@ import React from "react";
 import img2 from "../assets/img2.jpg";
 import Button from "./Button";
 import LogoText from "./LogoText";
+import { useNavigate } from "react-router-dom";
 
 import {
   LuBookOpen,
@@ -13,6 +14,11 @@ import {
 } from "react-icons/lu";
 
 const MainMenu = () => {
+  const navigate = useNavigate();
+
+  const handleClick = (tableName) => {
+    navigate("/table", { state: { tableName } });
+  };
   return (
     <div
       style={{
@@ -21,7 +27,7 @@ const MainMenu = () => {
       className="h-[calc(100vh-96px)] text-3xl bg-cover bg-center"
     >
       <div className="grid grid-cols-2 justify-items-center	items-center pt-20">
-        <Button variant={"mainmenu"}>
+        <Button onClick={() => handleClick("SUBJECTS")} variant={"mainmenu"}>
           <LogoText
             variant={"mainmenu"}
             Icon={LuBookOpen}
@@ -29,15 +35,15 @@ const MainMenu = () => {
             iconSize="35px"
           />
         </Button>
-        <Button variant={"mainmenu"}>
+        <Button onClick={() => handleClick("SCHEDULES")} variant={"mainmenu"}>
           <LogoText
             variant={"mainmenu"}
             Icon={LuCalendar}
-            text="SCHEDULE"
+            text="SCHEDULES"
             iconSize="35px"
           />
         </Button>
-        <Button variant={"mainmenu"}>
+        <Button onClick={() => handleClick("PROGRAMS")} variant={"mainmenu"}>
           <LogoText
             variant={"mainmenu"}
             Icon={LuAward}
@@ -45,15 +51,15 @@ const MainMenu = () => {
             iconSize="35px"
           />
         </Button>
-        <Button variant={"mainmenu"}>
+        <Button onClick={() => handleClick("TUITIONS")} variant={"mainmenu"}>
           <LogoText
             variant={"mainmenu"}
             Icon={LuDollarSign}
-            text="TUITION"
+            text="TUITIONS"
             iconSize="35px"
           />
         </Button>
-        <Button variant={"mainmenu"}>
+        <Button onClick={() => handleClick("STUDENTS")} variant={"mainmenu"}>
           <LogoText
             variant={"mainmenu"}
             Icon={LuUsers}
@@ -61,7 +67,7 @@ const MainMenu = () => {
             iconSize="35px"
           />
         </Button>
-        <Button variant={"mainmenu"}>
+        <Button onClick={() => handleClick("ENROLLMENTS")} variant={"mainmenu"}>
           <LogoText
             variant={"mainmenu"}
             Icon={LuFolder}

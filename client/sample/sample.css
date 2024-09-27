@@ -1,31 +1,13 @@
-body {
-  margin: 0;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+.button {
+  background-color: #4caf50; /* Default color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition */
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-  gap: 20px; /* Space between the grid items */
-  justify-items: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-}
-
-.grid-item {
-  padding: 20px; /* Space inside each item */
-  text-align: center; /* Center the text */
-  height: 100px; /* Fixed height for items */
-  width: 250px;
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
-
-.grid-item:nth-child(odd) {
-  background-color: #3498db; /* Blue for odd items */
-  color: white; /* White text */
-}
-
-.grid-item:nth-child(even) {
-  background-color: #e74c3c; /* Red for even items */
-  color: white; /* White text */
+.button:active {
+  background-color: #45a049; /* Color when active */
 }
