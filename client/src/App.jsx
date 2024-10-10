@@ -14,7 +14,7 @@ function App() {
           <Route index element={<LoginPage />} />
           <Route path="/menu" element={<MainMenuPage />} />
           <Route path="/table" element={<TablePage />} />
-          <Route path="*" element={<NoPage />} />
+          <Route path="*" element={<LoginPage />} />
         </Routes>
       </BrowserRouter>
     </>
