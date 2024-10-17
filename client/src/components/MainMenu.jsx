@@ -11,13 +11,17 @@ import {
   LuDollarSign,
   LuUsers,
   LuFolder,
+  LuPenSquare,
 } from "react-icons/lu";
 
 const MainMenu = () => {
   const navigate = useNavigate();
 
-  const handleClick = (tableName) => {
-    navigate("/table", { state: { tableName } });
+  const handleClickTable = (tableName) => {
+    navigate("/CEDV2/table", { state: { tableName } });
+  };
+  const handleClickGenerate = () => {
+    navigate("/CEDV2/generate");
   };
   return (
     <div
@@ -26,8 +30,11 @@ const MainMenu = () => {
       }}
       className="h-[calc(100vh-96px)] text-3xl bg-cover bg-center"
     >
-      <div className="grid grid-cols-2 justify-items-center	items-center pt-20">
-        <Button onClick={() => handleClick("SUBJECTS")} variant={"mainmenu"}>
+      <div className="grid grid-cols-2 justify-items-center	items-center">
+        <Button
+          onClick={() => handleClickTable("SUBJECTS")}
+          variant={"mainmenu"}
+        >
           <LogoText
             variant={"mainmenu"}
             Icon={LuBookOpen}
@@ -35,7 +42,10 @@ const MainMenu = () => {
             iconSize="35px"
           />
         </Button>
-        <Button onClick={() => handleClick("SCHEDULES")} variant={"mainmenu"}>
+        <Button
+          onClick={() => handleClickTable("SCHEDULES")}
+          variant={"mainmenu"}
+        >
           <LogoText
             variant={"mainmenu"}
             Icon={LuCalendar}
@@ -43,7 +53,10 @@ const MainMenu = () => {
             iconSize="35px"
           />
         </Button>
-        <Button onClick={() => handleClick("PROGRAMS")} variant={"mainmenu"}>
+        <Button
+          onClick={() => handleClickTable("PROGRAMS")}
+          variant={"mainmenu"}
+        >
           <LogoText
             variant={"mainmenu"}
             Icon={LuAward}
@@ -51,7 +64,10 @@ const MainMenu = () => {
             iconSize="35px"
           />
         </Button>
-        <Button onClick={() => handleClick("TUITIONS")} variant={"mainmenu"}>
+        <Button
+          onClick={() => handleClickTable("TUITIONS")}
+          variant={"mainmenu"}
+        >
           <LogoText
             variant={"mainmenu"}
             Icon={LuDollarSign}
@@ -59,7 +75,10 @@ const MainMenu = () => {
             iconSize="35px"
           />
         </Button>
-        <Button onClick={() => handleClick("STUDENTS")} variant={"mainmenu"}>
+        <Button
+          onClick={() => handleClickTable("STUDENTS")}
+          variant={"mainmenu"}
+        >
           <LogoText
             variant={"mainmenu"}
             Icon={LuUsers}
@@ -67,11 +86,24 @@ const MainMenu = () => {
             iconSize="35px"
           />
         </Button>
-        <Button onClick={() => handleClick("ENROLLMENTS")} variant={"mainmenu"}>
+        <Button
+          onClick={() => handleClickTable("ENROLLMENTS")}
+          variant={"mainmenu"}
+        >
           <LogoText
             variant={"mainmenu"}
             Icon={LuFolder}
             text="ENROLLMENTS"
+            iconSize="35px"
+          />
+        </Button>
+      </div>
+      <div className="grid justify-items-center ">
+        <Button onClick={() => handleClickGenerate()} variant={"mainmenu_gc"}>
+          <LogoText
+            variant={"mainmenu"}
+            Icon={LuPenSquare}
+            text="GENERATE COR"
             iconSize="35px"
           />
         </Button>

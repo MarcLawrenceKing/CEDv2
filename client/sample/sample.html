@@ -3,10 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Website</title>
-    <link rel="stylesheet" href="sample.css" />
+    <title>Image Overlay Example</title>
+    <style>
+      .image-container {
+        position: relative; /* Establishes a positioning context */
+        width: 300px; /* Set width of the container */
+        height: 200px; /* Set height of the container */
+      }
+
+      .image-container img {
+        width: 100%; /* Make image responsive */
+        height: 100%; /* Make image responsive */
+      }
+
+      .overlay {
+        position: absolute; /* Positioning the overlay */
+        top: 50%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Adjust position to center */
+        color: white; /* Text color */
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        padding: 10px; /* Padding around text */
+        border-radius: 5px; /* Rounded corners */
+      }
+    </style>
   </head>
   <body>
-    <button class="button">Click Me</button>
+    <div class="image-container">
+      <img
+        src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp"
+        alt="Sample Image"
+      />
+      <div class="overlay">Overlay Text</div>
+    </div>
   </body>
 </html>

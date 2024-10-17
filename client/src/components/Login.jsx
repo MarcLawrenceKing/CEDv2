@@ -10,7 +10,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/menu");
+    navigate("/CEDV2/menu");
   };
 
   return (

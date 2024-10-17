@@ -12,6 +12,7 @@ import {
   LuDollarSign,
   LuUsers,
   LuFolder,
+  LuPenSquare,
 } from "react-icons/lu";
 import pupLogo from "../assets/pup logo.png";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -30,6 +31,7 @@ const Header = ({ variant, isLogin = false, isMainMenu = false }) => {
     login: "LOGIN",
     mainmenu: "CENTRALIZED ENROLLMENT DATABASE",
     table: `${tableName}`,
+    generate: "GENERATE COR",
   };
 
   const variantClassesLogo = {
@@ -41,6 +43,7 @@ const Header = ({ variant, isLogin = false, isMainMenu = false }) => {
     TUITIONS: LuDollarSign,
     STUDENTS: LuUsers,
     ENROLLMENTS: LuFolder,
+    generate: LuPenSquare,
   };
   return (
     <div

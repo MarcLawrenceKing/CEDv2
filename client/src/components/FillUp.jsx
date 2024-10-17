@@ -1,6 +1,6 @@
 import React from "react";
 
-const FillUp = ({ text, variant, isPassword = false }) => {
+const FillUp = ({ text, variant, placeholder = "", isPassword = false }) => {
   const variantClassesText = {
     login: "text-2xl",
   };
@@ -18,6 +18,7 @@ const FillUp = ({ text, variant, isPassword = false }) => {
       <input
         type={`${isPassword ? "password" : "text"}`}
         className={`focus:outline-none ${variantClassesInput[variant]} `}
+        placeholder={`${placeholder}`}
       ></input>
     </div>
   );
