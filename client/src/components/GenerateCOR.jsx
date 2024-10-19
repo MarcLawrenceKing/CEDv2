@@ -2,8 +2,12 @@ import React from "react";
 import Image from "./Image";
 import img1 from "../assets/img1.jpg";
 import FillUp from "./FillUp";
+import Button from "./Button";
 
 const GenerateCOR = () => {
+  const handleClick = () => {
+    alert("COR Generated!");
+  };
   return (
     <div className="bg-background grid grid-cols-[25%_75%]">
       <div className="h-[calc(100vh-96px)] flex flex-col gap-8 items-center justify-center">
@@ -12,6 +16,9 @@ const GenerateCOR = () => {
           variant={"login"}
           placeholder="Ex: 230001"
         />
+        <Button onClick={handleClick} variant={"generate"}>
+          Generate
+        </Button>
       </div>
       <div className="relative h-[calc(100vh-96px)]">
         <Image

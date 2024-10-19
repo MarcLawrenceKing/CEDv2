@@ -8,7 +8,7 @@ const FillUp = ({ text, variant, placeholder = "", isPassword = false }) => {
     login: "h-10 w-80 rounded-2xl p-4 focus:border-pup-red focus:border-2 ",
   };
   const variantClassesDiv = {
-    login: "flex flex-col gap-2 items-center",
+    login: "flex flex-col gap-4 items-center",
   };
   return (
     <div className={`${variantClassesDiv[variant]}`}>
