@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import axios from "axios";
 
-const Display = ({ apiEndpoint, columns }) => {
+const Display = ({ apiEndpoint, columns, handleSelectedRowsChange }) => {
   const [data, setData] = useState([]);
   const [filterData, setFilterData] = useState([]);
 
@@ -65,6 +65,7 @@ const Display = ({ apiEndpoint, columns }) => {
         data={data}
         pagination
         selectableRows
+        onSelectedRowsChange={handleSelectedRowsChange}
         paginationComponentOptions={{
           noRowsPerPage: true, // This hides the rows per page dropdown
         }}

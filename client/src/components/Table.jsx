@@ -9,9 +9,14 @@ import Display from "./Display";
 
 const Table = () => {
   const [activeBtn, setActiveBtn] = useState(null); // to color the buttons blue when clicked
+  const [selectedRows, setSelectedRows] = useState([]);
 
   const handleClick = (buttonId) => {
     setActiveBtn(buttonId);
+  };
+
+  const handleSelectedRowsChange = ({ selectedRows }) => {
+    setSelectedRows(selectedRows);
   };
 
   const location = useLocation();
@@ -22,7 +27,7 @@ const Table = () => {
       name: "Subject Code",
       selector: (row) => row.SubjectCode,
       sortable: true,
-      width: "20%",
+      width: "15%",
     },
     {
       name: "Subject Title",
@@ -47,21 +52,25 @@ const Table = () => {
       name: "Schedule ID",
       selector: (row) => row.ScheduleID,
       sortable: true,
+      width: "15%",
     },
     {
       name: "Subject Code",
       selector: (row) => row.SubjectCode,
       sortable: true,
+      width: "15%",
     },
     {
       name: "Section Code",
       selector: (row) => row.SectionCode,
       sortable: true,
+      width: "15%",
     },
     {
       name: "AY Term",
       selector: (row) => row.AYTerm,
       sortable: true,
+      width: "25%",
     },
     {
       name: "Schedule",
@@ -75,6 +84,7 @@ const Table = () => {
       name: "Program Code",
       selector: (row) => row.ProgramCode,
       sortable: true,
+      width: "20%",
     },
     {
       name: "Program Description",
@@ -238,7 +248,7 @@ const Table = () => {
           isActive={activeBtn === 3}
           onClick={() => handleClick(3)}
           variant={"table"}
-          disabled={true}
+          disabled={selectedRows.length !== 1}
         >
           <LogoText
             variant={"table_options"}
@@ -251,7 +261,7 @@ const Table = () => {
           isActive={activeBtn === 4}
           onClick={() => handleClick(4)}
           variant={"table"}
-          disabled={true}
+          disabled={selectedRows.length == 0}
         >
           <LogoText
             variant={"table_options"}
@@ -279,36 +289,42 @@ const Table = () => {
             <Display
               apiEndpoint="http://localhost:8081/api/subject"
               columns={subjectColumns}
+              handleSelectedRowsChange={handleSelectedRowsChange}
             />
           )}
           {activeBtn == 2 && tableName == "SCHEDULES" && (
             <Display
               apiEndpoint="http://localhost:8081/api/schedule"
               columns={scheduleColumns}
+              handleSelectedRowsChange={handleSelectedRowsChange}
             />
           )}
           {activeBtn == 2 && tableName == "PROGRAMS" && (
             <Display
               apiEndpoint="http://localhost:8081/api/program"
               columns={programColumns}
+              handleSelectedRowsChange={handleSelectedRowsChange}
             />
           )}
           {activeBtn == 2 && tableName == "TUITIONS" && (
             <Display
               apiEndpoint="http://localhost:8081/api/tuition"
               columns={tuitionColumns}
+              handleSelectedRowsChange={handleSelectedRowsChange}
             />
           )}
           {activeBtn == 2 && tableName == "STUDENTS" && (
             <Display
               apiEndpoint="http://localhost:8081/api/student"
               columns={studentColumns}
+              handleSelectedRowsChange={handleSelectedRowsChange}
             />
           )}
           {activeBtn == 2 && tableName == "ENROLLMENTS" && (
             <Display
               apiEndpoint="http://localhost:8081/api/enrollment"
               columns={enrollmentColumns}
+              handleSelectedRowsChange={handleSelectedRowsChange}
             />
           )}
         </div>
